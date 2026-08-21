@@ -1,42 +1,35 @@
--- View 1: Weekly demand aggregation
-CREATE OR REPLACE VIEW `dependable-link-470810-e6.supply_chain_demo.weekly_demand` AS
+-- View 1: Carrier performance summary
+CREATE OR REPLACE VIEW `dependable-link-470810-e6.logistics_analytics.carrier_performance` AS
 SELECT
-    product_id,
-    category,
+    delivery_partner,
+    COUNT(delivery_id) AS total_deliveries,
+    ROUND(SAFE_DIVIDE(COUNTIF(delivery_status = 'delivered'), COUNT(delivery_id)) * 100, 1) AS success_rate_pct,
+    ROUND(SAFE_DIVIDE(COUNTIF(delayed = TRUE), COUNT(delivery_id)) * 100, 1) AS delay_rate_pct,
+    ROUND(SAFE_DIVIDE(COUNTIF(delivery_status = 'failed'), COUNT(delivery_id)) * 100, 1) AS failure_rate_pct,
+    ROUND(AVG(IF(delayed = TRUE, delay_hours, NULL)), 2) AS avg_delay_hours_when_late,
+    ROUND(AVG(delivery_rating), 2) AS avg_rating,
+    ROUND(AVG(cost_per_km), 2) AS avg_cost_per_km,
+    ROUND(AVG(cost_per_kg), 2) AS avg_cost_per_kg
+FROM `dependable-link-470810-e6.logistics_analytics.shipments_cleaned`
+GROUP BY delivery_partner;
+
+-- View 2: Regional bottleneck view
+CREATE OR REPLACE VIEW `dependable-link-470810-e6.logistics_analytics.region_performance` AS
+SELECT
     region,
-    store_type,
-    supplier_id,
-    supplier_name,
-    lead_time_days,
-    FORMAT_DATE('%Y-%W', date) AS year_week,
-    SUM(sales_units) AS weekly_units_sold,
-    AVG(sales_units) AS avg_daily_sales,
-    AVG(future_demand) AS avg_forecasted_future_demand
-FROM `dependable-link-470810-e6.supply_chain_demo.sales_with_supply_data`
-GROUP BY product_id, category, region, store_type, supplier_id, supplier_name, lead_time_days, year_week;
+    COUNT(delivery_id) AS total_deliveries,
+    ROUND(SAFE_DIVIDE(COUNTIF(delayed = TRUE), COUNT(delivery_id)) * 100, 1) AS delay_rate_pct,
+    ROUND(AVG(IF(delayed = TRUE, delay_hours, NULL)), 2) AS avg_delay_hours_when_late,
+    ROUND(AVG(cost_per_km), 2) AS avg_cost_per_km
+FROM `dependable-link-470810-e6.logistics_analytics.shipments_cleaned`
+GROUP BY region;
 
--- View 2: Demand variability per product
-CREATE OR REPLACE VIEW `dependable-link-470810-e6.supply_chain_demo.demand_stats` AS
+-- View 3: Weather impact on delays
+CREATE OR REPLACE VIEW `dependable-link-470810-e6.logistics_analytics.weather_impact` AS
 SELECT
-    product_id,
-    AVG(weekly_units_sold) AS avg_weekly_demand,
-    STDDEV(weekly_units_sold) AS stdev_weekly_demand
-FROM `dependable-link-470810-e6.supply_chain_demo.weekly_demand`
-GROUP BY product_id;
-
--- View 3: Safety stock & reorder point
-CREATE OR REPLACE VIEW `dependable-link-470810-e6.supply_chain_demo.reorder_calc` AS
-SELECT
-    d.product_id,
-    ANY_VALUE(wd.category) AS category,
-    ANY_VALUE(wd.region) AS region,
-    ANY_VALUE(wd.supplier_name) AS supplier_name,
-    ANY_VALUE(wd.lead_time_days) AS lead_time_days,
-    d.avg_weekly_demand,
-    d.stdev_weekly_demand,
-    ROUND(1.65 * d.stdev_weekly_demand * SQRT(ANY_VALUE(wd.lead_time_days) / 7.0), 1) AS safety_stock,
-    ROUND((d.avg_weekly_demand / 7.0 * ANY_VALUE(wd.lead_time_days))
-          + (1.65 * d.stdev_weekly_demand * SQRT(ANY_VALUE(wd.lead_time_days) / 7.0)), 1) AS reorder_point
-FROM `dependable-link-470810-e6.supply_chain_demo.demand_stats` d
-JOIN `dependable-link-470810-e6.supply_chain_demo.weekly_demand` wd ON d.product_id = wd.product_id
-GROUP BY d.product_id, d.avg_weekly_demand, d.stdev_weekly_demand;
+    weather_condition,
+    COUNT(delivery_id) AS total_deliveries,
+    ROUND(SAFE_DIVIDE(COUNTIF(delayed = TRUE), COUNT(delivery_id)) * 100, 1) AS delay_rate_pct,
+    ROUND(AVG(IF(delayed = TRUE, delay_hours, NULL)), 2) AS avg_delay_hours_when_late
+FROM `dependable-link-470810-e6.logistics_analytics.shipments_cleaned`
+GROUP BY weather_condition;
