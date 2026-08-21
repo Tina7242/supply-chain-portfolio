@@ -1,0 +1,6 @@
+Supplier,total_orders,delivered_orders,cancelled_orders,fulfillment_rate_pct,avg_delivery_days,avg_defect_rate_pct,compliance_rate_pct,total_negotiated_savings,total_spend
+Alpha_Inc,141,107,13,75.9,10.5,2.36,93.6,688920.49,7839712.25
+Epsilon_Group,166,120,14,72.3,10.5,3.07,98.2,844980.18,9851156.06
+Gamma_Co,143,103,6,72.0,9.9,5.02,86.0,725308.42,8587921.71
+Beta_Supplies,156,110,14,70.5,11.2,9.78,75.6,889940.89,9858665.9
+Delta_Logistics,171,120,16,70.2,10.3,14.63,60.8,781976.49,9236240.47
