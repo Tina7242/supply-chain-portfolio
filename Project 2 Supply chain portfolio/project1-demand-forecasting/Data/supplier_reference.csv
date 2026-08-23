@@ -1,0 +1,101 @@
+product_id,supplier_id,supplier_name,lead_time_days
+151,SUP-151,Smith Group,17
+192,SUP-171,Turner Ltd,9
+114,SUP-182,Bailey Group,13
+171,SUP-174,"Martinez, Fields and Mora",6
+160,SUP-123,Scott-Forbes,5
+120,SUP-121,Marquez and Sons,4
+182,SUP-187,"Arnold, Hart and Lucas",14
+186,SUP-129,Mclaughlin Group,8
+174,SUP-101,Hernandez PLC,3
+187,SUP-175,Zhang PLC,14
+199,SUP-188,Wilkerson Ltd,19
+123,SUP-190,Nelson LLC,12
+102,SUP-191,Pratt-Baker,18
+121,SUP-114,"Holmes, Wolf and Mcdonald",17
+152,SUP-161,"Ramirez, Bennett and Wright",14
+101,SUP-154,Tyler-Campbell,5
+129,SUP-150,"Sullivan, Blackwell and Peterson",9
+137,SUP-120,Jones and Sons,11
+163,SUP-138,Davis-Hudson,20
+159,SUP-103,Gray-Smith,16
+132,SUP-108,Lane-Francis,4
+175,SUP-183,Kelly-Johnson,17
+157,SUP-159,Brown LLC,9
+188,SUP-143,Herrera-Brady,10
+148,SUP-146,"Maldonado, Knox and Rios",5
+190,SUP-177,"Wade, King and Wood",19
+158,SUP-135,Allen-Conley,20
+141,SUP-103,"Goodwin, Williams and Jackson",4
+191,SUP-105,Sanchez and Sons,12
+179,SUP-103,Gonzalez-Dominguez,20
+161,SUP-189,Kim-Garcia,14
+146,SUP-133,"Frazier, Donaldson and Bonilla",12
+150,SUP-161,"Allen, Young and Burke",6
+154,SUP-113,Ware-Peters,18
+106,SUP-114,Green-Gill,10
+172,SUP-177,Williams Inc,10
+138,SUP-184,"Miller, Harrington and Chavez",18
+117,SUP-181,"Brown, Hernandez and Arnold",17
+103,SUP-152,Bullock Ltd,15
+113,SUP-140,"Tapia, Smith and Robinson",17
+108,SUP-144,Gonzalez Ltd,3
+189,SUP-188,"Wilkins, Cox and Collins",9
+183,SUP-108,Bennett-Delgado,3
+170,SUP-107,Bridges-Green,13
+143,SUP-180,Cortez-Haney,10
+107,SUP-134,Blankenship-Bowers,5
+134,SUP-132,Reed-Burns,7
+177,SUP-140,"Maldonado, Morse and Green",9
+180,SUP-172,"Rodriguez, Terrell and York",10
+135,SUP-111,Huang-Duncan,4
+149,SUP-132,Trujillo LLC,18
+105,SUP-122,Bailey Inc,7
+153,SUP-198,Johnson Group,14
+162,SUP-185,Flores Group,5
+133,SUP-164,Jennings-Thomas,5
+173,SUP-146,Phillips-Bennett,16
+194,SUP-102,Lambert and Sons,3
+147,SUP-104,"Frazier, Williams and Ellis",16
+139,SUP-126,"Figueroa, Bond and Owens",11
+184,SUP-178,"Sweeney, Marshall and Barton",17
+181,SUP-189,"Fletcher, Ray and Haley",12
+125,SUP-176,Barron Group,9
+140,SUP-151,Dawson LLC,6
+128,SUP-193,Gray LLC,7
+144,SUP-122,Anthony-Hardy,9
+164,SUP-114,Orozco Inc,13
+100,SUP-128,"Cline, Potter and Peterson",6
+110,SUP-112,Howard Inc,9
+104,SUP-158,"Griffin, Estrada and Johnson",4
+127,SUP-141,Hall PLC,15
+111,SUP-161,Perez-King,8
+122,SUP-127,Hayes-Payne,14
+136,SUP-143,"Riley, Armstrong and Mendez",13
+198,SUP-191,"Obrien, Massey and Gordon",9
+185,SUP-161,Davis-Perez,3
+126,SUP-100,Richardson-Madden,15
+178,SUP-102,Roberts-Hernandez,9
+176,SUP-169,Stephens-Mack,10
+195,SUP-126,"Williams, Munoz and Schultz",11
+193,SUP-161,Fry Ltd,7
+142,SUP-196,"Ellis, Hall and Cunningham",12
+112,SUP-143,Harrison Inc,17
+131,SUP-158,Hart LLC,11
+165,SUP-151,Mcmahon and Sons,19
+156,SUP-161,Adams-Sparks,19
+196,SUP-157,Reese-Murphy,14
+169,SUP-138,Whitaker LLC,4
+155,SUP-102,"Watkins, Smith and Jones",19
+118,SUP-155,Thomas and Sons,19
+167,SUP-158,Russo-Harrison,19
+116,SUP-101,"Martin, Moreno and Smith",4
+168,SUP-191,"Davis, Ortega and Fleming",7
+197,SUP-195,"Wright, Mays and Wiggins",3
+115,SUP-100,Solomon PLC,4
+119,SUP-152,"Clark, Solis and Foster",14
+166,SUP-189,Smith Group,8
+130,SUP-131,Rodriguez-Hayes,6
+124,SUP-154,Morton-Cummings,13
+145,SUP-155,"Smith, Hernandez and Lang",19
+109,SUP-137,Robinson-Hudson,7
