@@ -6,7 +6,7 @@ Power BI, and Tableau.
 
 ## Projects
 
-### 📈 [Demand Forecasting & Inventory Health Dashboard](./project1-demand-forecasting)
+### 📈 [Demand Forecasting & Inventory Health Dashboard](/Project 1 Supply chain portfolio/)
 Forecasts product demand and flags reorder risk using a time-series model,
 BigQuery-based safety stock calculations, and a Power BI dashboard.
 
